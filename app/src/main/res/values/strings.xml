@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CS441_Proj6</string>
+    <string name="gameTitle">Ultimate F1 Speed Quiz!!!</string>
+    <string name="startTime">Begin Timed Quiz</string>
+    <string name="startUTime">Begin Untimed Quiz</string>
+    <string name="seeTimeLB">See Timed Quiz Leaderboard</string>
+    <string name="seeUTimeLB">See Untimed Quiz Leaderboard</string>
+    <string name="space"> </string>
+    <string name="dis">*Answers as of pre-season testing 2021*</string>
 </resources>
