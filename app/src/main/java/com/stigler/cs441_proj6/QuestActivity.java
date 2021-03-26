@@ -2,6 +2,7 @@ package com.stigler.cs441_proj6;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -176,11 +177,6 @@ public class QuestActivity extends AppCompatActivity
        }
     }
 
-    public void temp(View view)
-    {
-        //to prevent an error until actual method is made
-    }
-
     public void clickedNQ(View view)
     {
         if (nextQ.getText() == "Next Question")
@@ -190,7 +186,8 @@ public class QuestActivity extends AppCompatActivity
         }
         else if (nextQ.getText() == "Finish Quiz")
         {
-            //
+            Intent actAction = new Intent(this, quizResults.class); //will be changed to a results screen, scoreboard is temp
+            startActivity(actAction);
         }
     }
 }

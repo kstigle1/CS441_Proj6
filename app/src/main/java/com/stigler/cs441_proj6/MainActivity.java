@@ -39,11 +39,14 @@ public class MainActivity extends AppCompatActivity
 
     public void seeUTLB(View view)
     {
-        //
+        Intent actAction = new Intent(this, UTLeaderboard.class);
+        startActivity(actAction);
     }
 
     public void setQuestions()
     {
+        single.questions.clear();
+        single.totalCorrect = 0;
         Question raceWinner = new Question("Which driver has won an F1 race?", "podium", "Lando Norris", "Mick Schumacher", "George Russell", "Pierre Gasly", "Pierre Gasly");
         Question ferrariMonza= new Question ("Who was the last Ferrari driver to win at Monza?", "monza", "Kimi Raikkonen", "Charles Leclerc", "Michael Schumacher", "Sebastian Vettel", "Charles Leclerc");
         single.questions.add(raceWinner);

@@ -6,7 +6,7 @@ public class Singleton
 {
     private static Singleton single = null;
     ArrayList<Question> questions = new ArrayList<>();
-    int totalCorrect = 0;
+    double totalCorrect = 0.0; //double instead of int so percent calculation works in results
 
     private Singleton()
     {

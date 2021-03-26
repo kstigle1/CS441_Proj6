@@ -47,6 +47,7 @@
         android:onClick="beginTGame"
         android:text="@string/startTime"
         android:backgroundTint="@color/red"
+        android:textColor="@color/black"
         />
 
     <Button
@@ -62,6 +63,7 @@
         android:onClick="beginUTGame"
         android:text="@string/startUTime"
         android:backgroundTint="@color/yellow"
+        android:textColor="@color/black"
         />
 
     <Button
@@ -77,6 +79,7 @@
         android:onClick="seeTLB"
         android:text="@string/seeTimeLB"
         android:backgroundTint="@color/red"
+        android:textColor="@color/black"
         />
 
     <Button
@@ -91,7 +94,8 @@
         android:layout_marginRight="0dp"
         android:onClick="seeUTLB"
         android:text="@string/seeUTimeLB"
-        android:backgroundTint="@color/red"
+        android:backgroundTint="@color/green"
+        android:textColor="@color/black"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
