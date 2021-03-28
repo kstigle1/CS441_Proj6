@@ -10,4 +10,7 @@
     <string name="leaderPHer">This will be the untimed leaderboard</string>
     <string name="returnMain">Return to main menu</string>
     <string name="resultsPHer">Results Screen</string>
+    <string name="name">Name:</string>
+    <string name="score">Score:</string>
+    <string name="enterName">What is your name?</string>
 </resources>
