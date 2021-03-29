@@ -20,8 +20,6 @@ public class quizResults extends AppCompatActivity
     Singleton single;
     Button return2main;
     EditText whatName;
-    TableLayout UTTable;
-    ArrayList<TableRow> rowList;
     int percentRes;
 
     @Override
@@ -34,22 +32,21 @@ public class quizResults extends AppCompatActivity
         outOfTen = (TextView) findViewById(R.id.out10);
         return2main = (Button) findViewById(R.id.return2main);
         whatName = (EditText) findViewById(R.id.nameBox);
-        UTTable = (TableLayout) findViewById(R.id.UTLeaders);
 
-        percentRes = (int) (single.totalCorrect/single.questions.size())*100; //total correct is a double
+        percentRes = (int) (single.totalCorrect/single.questions.size()*100); //total correct is a double
         outOfTen.setText("Score: " + percentRes + "%");
     }
 
     public void returnToMain(View view)
     {
-        addLeader();
+        //addLeader();
         Intent actAction = new Intent(this, MainActivity.class);
         startActivity(actAction);
     }
 
     public void returnLeader(View view)
     {
-        addLeader();
+        //addLeader();
         Intent actAction = new Intent(this, UTLeaderboard.class);
         startActivity(actAction);
     }
@@ -61,20 +58,8 @@ public class quizResults extends AppCompatActivity
         {
             pName = "Anonymous Player";
         }
-        TableRow lbRow = new TableRow(this);
-        TextView playerName = new TextView(this);
-        TextView playerScore = new TextView(this);
-        playerName.setText(pName);
-        playerScore.setText(percentRes + "%");
-        playerName.setTextSize(15);
-        playerName.setTextColor(Color.BLACK);
-        playerScore.setTextSize(15);
-        playerScore.setTextColor(Color.BLACK);
-        lbRow.addView(playerName, 0);
-        lbRow.addView(playerScore, 1);
-        rowList.add(lbRow);
+        LBEntry entry = new LBEntry(pName, percentRes);
+        single.LBEntries.add(entry);
         whatName.setText("");
-
-        //need to sort the list somehow
     }
 }

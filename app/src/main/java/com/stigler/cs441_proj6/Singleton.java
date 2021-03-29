@@ -1,5 +1,7 @@
 package com.stigler.cs441_proj6;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 
 public class Singleton
@@ -7,6 +9,9 @@ public class Singleton
     private static Singleton single = null;
     ArrayList<Question> questions = new ArrayList<>();
     double totalCorrect = 0.0; //double instead of int so percent calculation works in results
+    ArrayList<LBEntry> LBEntries = new ArrayList<>();
+
+    Context UTLBcontext;
 
     private Singleton()
     {
