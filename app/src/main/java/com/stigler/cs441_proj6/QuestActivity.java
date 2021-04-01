@@ -7,10 +7,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
@@ -22,6 +24,9 @@ public class QuestActivity extends AppCompatActivity
     TextView questionTxt;
     int currentQ = 0;
     Question curr;
+
+    ImageView activeImage;
+    ImageView podium, monza, paulRicard, ukFlag, softtire, giohelmet, suzuka;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,6 +42,16 @@ public class QuestActivity extends AppCompatActivity
         nextQ = (Button) findViewById(R.id.nextQ);
         questionTxt = (TextView) findViewById(R.id.questionText);
 
+        podium = (ImageView) findViewById(R.id.podium);
+        monza = (ImageView) findViewById(R.id.monza);
+        paulRicard = (ImageView) findViewById(R.id.paulricard);
+        ukFlag = (ImageView) findViewById(R.id.ukFlag);
+        softtire = (ImageView) findViewById(R.id.softtire);
+        giohelmet = (ImageView) findViewById(R.id.giohelmet);
+        suzuka = (ImageView) findViewById(R.id.suzuka);
+
+        activeImage = podium;
+
         shuffle();
         displayQ();
     }
@@ -44,6 +59,7 @@ public class QuestActivity extends AppCompatActivity
     public void displayQ()
     {
         curr = single.questions.get(currentQ);
+        activeImage.setAlpha((float) 0.0);
         nextQ.setAlpha((float) 0.0);
         nextQ.setEnabled(false);
         if (currentQ != single.questions.size()-1)
@@ -53,6 +69,24 @@ public class QuestActivity extends AppCompatActivity
         else
         {
             nextQ.setText("Finish Quiz");
+        }
+
+        switch (curr.image)
+        {
+            case "podium": podium.setAlpha((float) 1.0); activeImage = podium;
+            break;
+            case "monza": monza.setAlpha((float) 1.0); activeImage = monza;
+            break;
+            case "paulricard": paulRicard.setAlpha((float) 1.0); activeImage = paulRicard;
+            break;
+            case "ukFlag": ukFlag.setAlpha((float) 1.0); activeImage = ukFlag;
+            break;
+            case "softtire": softtire.setAlpha((float) 1.0); activeImage = softtire;
+            break;
+            case "giohelmet": giohelmet.setAlpha((float) 1.0); activeImage = giohelmet;
+            break;
+            case "suzuka": suzuka.setAlpha((float) 1.0); activeImage = suzuka;
+            break;
         }
 
         questionTxt.setText(curr.qText);
@@ -186,7 +220,7 @@ public class QuestActivity extends AppCompatActivity
         }
         else if (nextQ.getText() == "Finish Quiz")
         {
-            Intent actAction = new Intent(this, quizResults.class); //will be changed to a results screen, scoreboard is temp
+            Intent actAction = new Intent(this, quizResults.class);
             startActivity(actAction);
         }
     }

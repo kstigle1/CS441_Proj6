@@ -94,7 +94,7 @@
         android:layout_marginRight="0dp"
         android:onClick="seeUTLB"
         android:text="@string/seeUTimeLB"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/yellow"
         android:textColor="@color/black"
         />
 
