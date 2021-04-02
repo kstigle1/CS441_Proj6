@@ -11,6 +11,9 @@ public class Singleton
     double totalCorrect = 0.0; //double instead of int so percent calculation works in results
     ArrayList<LBEntry> LBEntries = new ArrayList<>();
 
+    boolean timed = false;
+    long startTime, endTime;
+
     Context UTLBcontext;
 
     private Singleton()

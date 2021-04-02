@@ -220,6 +220,7 @@ public class QuestActivity extends AppCompatActivity
         }
         else if (nextQ.getText() == "Finish Quiz")
         {
+            single.endTime = System.nanoTime();
             Intent actAction = new Intent(this, quizResults.class);
             startActivity(actAction);
         }

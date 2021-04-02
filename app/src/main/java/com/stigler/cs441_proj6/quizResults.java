@@ -12,11 +12,14 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class quizResults extends AppCompatActivity
 {
-    TextView outOfTen;
+    TextView outOfTen, timeTaken;
     Singleton single;
     Button return2main;
     EditText whatName;
@@ -32,9 +35,20 @@ public class quizResults extends AppCompatActivity
         outOfTen = (TextView) findViewById(R.id.out10);
         return2main = (Button) findViewById(R.id.return2main);
         whatName = (EditText) findViewById(R.id.nameBox);
+        timeTaken = (TextView) findViewById(R.id.timeTaken);
 
         percentRes = (int) (single.totalCorrect/single.questions.size()*100); //total correct is a double
         outOfTen.setText("Score: " + percentRes + "%");
+
+        DecimalFormat timeFormat = new DecimalFormat("##.00");
+        if (single.timed)
+        {
+            timeTaken.setText("Total time: " + timeFormat.format((single.endTime - single.startTime)/1000000000.0) + " seconds");
+        }
+        else
+        {
+            timeTaken.setText("This quiz was not timed!!");
+        }
     }
 
     public void returnToMain(View view)

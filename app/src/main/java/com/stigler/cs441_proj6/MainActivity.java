@@ -23,12 +23,17 @@ public class MainActivity extends AppCompatActivity
 
     public void beginTGame(View view)
     {
-        //
+        setQuestions();
+        single.timed = true;
+        single.startTime = System.nanoTime();
+        Intent actAction = new Intent(this, QuestActivity.class);
+        startActivity(actAction);
     }
 
     public void beginUTGame(View view)
     {
         setQuestions();
+        single.timed = false;
         Intent actAction = new Intent(this, QuestActivity.class);
         startActivity(actAction);
     }
