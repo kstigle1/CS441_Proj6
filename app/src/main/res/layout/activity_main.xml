@@ -16,8 +16,9 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginBottom="600dp"
-        android:textSize="35sp"
+        android:textSize="33sp"
         android:textColor="@color/black"
+        android:gravity="center"
         />
 
     <TextView
@@ -32,6 +33,7 @@
         android:layout_marginTop="600dp"
         android:textSize="20sp"
         android:textColor="@color/black"
+        android:gravity="center"
         />
 
     <Button
