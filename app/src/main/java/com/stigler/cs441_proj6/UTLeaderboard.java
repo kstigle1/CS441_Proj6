@@ -38,12 +38,15 @@ public class UTLeaderboard extends AppCompatActivity
         startActivity(actAction);
     }
 
-    public void clearTable()
+    public void clearTable(View view)
     {
-        while (single.LBEntries.size() >= 0)
+        while (UTrow.size() > 0)
         {
-            //UTrow stuff
+            TableRow gone = UTrow.remove(UTrow.size()-1);
+            UTtable.removeView(gone);
         }
+        single.LBEntries.clear();
+        generateTable();
     }
 
     public void generateTable()
@@ -66,6 +69,7 @@ public class UTLeaderboard extends AppCompatActivity
             tRow.addView(playerScore, 1);
 
             UTtable.addView(tRow);
+            UTrow.add(tRow);
         }
     }
 }

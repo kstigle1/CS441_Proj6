@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CS441_Proj6</string>
-    <string name="gameTitle">Ultimate F1 Speed Quiz!!!</string>
+    <string name="gameTitle">Ultimate F1 Quiz!!!</string>
     <string name="startTime">Begin Timed Quiz</string>
     <string name="startUTime">Begin Untimed Quiz</string>
     <string name="seeTimeLB">See Timed Quiz Leaderboard</string>
@@ -13,4 +13,5 @@
     <string name="name">Name:</string>
     <string name="score">Score:</string>
     <string name="enterName">What is your name?</string>
+    <string name="clear">Reset Leaderboard</string>
 </resources>
