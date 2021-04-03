@@ -62,14 +62,14 @@ public class MainActivity extends AppCompatActivity
         Question figure8 = new Question("What is the only track that is a figure 8?", "suzuka", "Suzuka International Circuit", "Bahrain International Circuit", "Circuit de Spa-Francorchamps", "Marina Bay Street Circuit", "Suzuka International Circuit");
         Question notCountry = new Question("Which country has never hosted a Grand Prix?", "worldmap", "Hungary", "South Africa", "Italy", "New Zealand", "New Zealand");
         Question notTrack = new Question("Which US racetrack has never hosted a Grand Prix?", "cota", "Indianapolis Motor Speedway", "Circuit of the Americas", "Watkins Glen International", "Laguna Seca Raceway", "Laguna Seca Raceway");
-        single.questions.add(raceWinner);
-        single.questions.add(ferrariMonza);
+        //single.questions.add(raceWinner);
+        //single.questions.add(ferrariMonza);
         single.questions.add(whichTrack);
-        single.questions.add(notUK);
-        single.questions.add(numTires);
-        single.questions.add(whichHelmet);
+        //single.questions.add(notUK);
+       // single.questions.add(numTires);
+        //single.questions.add(whichHelmet);
         single.questions.add(figure8);
-        single.questions.add(notCountry);
-        single.questions.add(notTrack);
+        //single.questions.add(notCountry);
+        //single.questions.add(notTrack);
     }
 }

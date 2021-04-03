@@ -24,6 +24,7 @@ public class quizResults extends AppCompatActivity
     Button return2main;
     EditText whatName;
     int percentRes;
+    String timeRes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,9 +42,10 @@ public class quizResults extends AppCompatActivity
         outOfTen.setText("Score: " + percentRes + "%");
 
         DecimalFormat timeFormat = new DecimalFormat("##.00");
+        timeRes = timeFormat.format((single.endTime - single.startTime)/1000000000.0);
         if (single.timed)
         {
-            timeTaken.setText("Total time: " + timeFormat.format((single.endTime - single.startTime)/1000000000.0) + " seconds");
+            timeTaken.setText("Total time: " + timeRes + " seconds");
         }
         else
         {
@@ -53,14 +55,14 @@ public class quizResults extends AppCompatActivity
 
     public void returnToMain(View view)
     {
-        //addLeader();
+        addLeader();
         Intent actAction = new Intent(this, MainActivity.class);
         startActivity(actAction);
     }
 
     public void returnLeader(View view)
     {
-        //addLeader();
+        addLeader();
         Intent actAction = new Intent(this, UTLeaderboard.class);
         startActivity(actAction);
     }
@@ -72,7 +74,7 @@ public class quizResults extends AppCompatActivity
         {
             pName = "Anonymous Player";
         }
-        LBEntry entry = new LBEntry(pName, percentRes);
+        LBEntry entry = new LBEntry(pName, Integer.toString(percentRes), timeRes);
         single.LBEntries.add(entry);
         whatName.setText("");
     }

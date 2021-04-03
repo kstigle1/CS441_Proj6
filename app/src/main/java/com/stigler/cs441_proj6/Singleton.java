@@ -14,8 +14,6 @@ public class Singleton
     boolean timed = false;
     long startTime, endTime;
 
-    Context UTLBcontext;
-
     private Singleton()
     {
         //

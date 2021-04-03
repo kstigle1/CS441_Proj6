@@ -12,6 +12,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class UTLeaderboard extends AppCompatActivity
 {
@@ -26,6 +27,7 @@ public class UTLeaderboard extends AppCompatActivity
         setContentView(R.layout.activity_u_t_leaderboard);
         single = Singleton.getInstance();
         UTtable = (TableLayout) findViewById(R.id.UTLeaders);
+        UTrow = new ArrayList<>();
 
         generateTable();
     }
@@ -46,6 +48,7 @@ public class UTLeaderboard extends AppCompatActivity
 
     public void generateTable()
     {
+        Collections.sort(single.LBEntries);
         for (int i=0; i<single.LBEntries.size(); i++)
         {
             TableRow tRow = new TableRow(this);
@@ -57,12 +60,11 @@ public class UTLeaderboard extends AppCompatActivity
             playerName.setTextColor(Color.BLACK);
             tRow.addView(playerName, 0);
 
-            playerScore.setText(single.LBEntries.get(i).score);
+            playerScore.setText(single.LBEntries.get(i).score + "%");
             playerScore.setTextSize(15);
             playerScore.setTextColor(Color.BLACK);
+            tRow.addView(playerScore, 1);
 
-            //tRow.addView(playerScore, 1);
-            System.out.println("***");
             UTtable.addView(tRow);
         }
     }
