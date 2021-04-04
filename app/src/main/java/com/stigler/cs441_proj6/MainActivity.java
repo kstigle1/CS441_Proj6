@@ -40,12 +40,19 @@ public class MainActivity extends AppCompatActivity
 
     public void seeTLB(View view)
     {
-        //
+        Intent actAction = new Intent(this, TLeaderboard.class);
+        startActivity(actAction);
     }
 
     public void seeUTLB(View view)
     {
         Intent actAction = new Intent(this, UTLeaderboard.class);
+        startActivity(actAction);
+    }
+
+    public void seeInsts(View view)
+    {
+        Intent actAction = new Intent(this, Insts.class);
         startActivity(actAction);
     }
 

@@ -3,17 +3,24 @@
     <string name="gameTitle">Ultimate F1 Quiz!!!</string>
     <string name="startTime">Begin Timed Quiz</string>
     <string name="startUTime">Begin Untimed Quiz</string>
-    <string name="seeTimeLB">See Timed Quiz Leaderboard</string>
-    <string name="seeUTimeLB">See Untimed Quiz Leaderboard</string>
+    <string name="seeTimeLB">See Timed Quiz Leader Board</string>
+    <string name="seeUTimeLB">See Untimed Quiz Leader Board</string>
     <string name="space"> </string>
     <string name="dis">*Answers as of pre-season testing 2021*</string>
-    <string name="leaderPHer">Untimed Leaderboard</string>
-    <string name="TleaderPHer">Timed Leaderboard</string>
+    <string name="leaderPHer">Untimed Leader Board</string>
+    <string name="TleaderPHer">Timed Leader Board</string>
     <string name="returnMain">Return to main menu</string>
     <string name="resultsPHer">Results Screen</string>
     <string name="name">Name:</string>
     <string name="score">Score:</string>
     <string name="time">Time:</string>
     <string name="enterName">What is your name?</string>
-    <string name="clear">Reset Leaderboard</string>
+    <string name="clear">Reset Leader Board</string>
+    <string name="how2play">How to Play</string>
+
+    <string name="untimedInst">Answer the questions to try and get as many correct as possible. The leader board is sorted by percent correct, then by alphabetical order of the player\'s name.</string>
+    <string name="timedInst">Answer the questions to try and get as many correct as possible as fast as possible. The leader board is sorted by percent correct, then the amount of time taken to finish the quiz, then by alphabetical order of the player\'s name.</string>
+    <string name="utInstLabel">Untimed Quiz:</string>
+    <string name="tInstLabel">Timed Quiz:</string>
+
 </resources>

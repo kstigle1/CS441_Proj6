@@ -25,6 +25,7 @@ public class UTLeaderboard extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_u_t_leaderboard);
+
         single = Singleton.getInstance();
         UTtable = (TableLayout) findViewById(R.id.UTLeaders);
         UTrow = new ArrayList<>();

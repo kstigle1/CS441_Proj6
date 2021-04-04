@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CS441_Proj6">
-        <activity android:name=".TLeaderboard"></activity>
+        <activity android:name=".Insts"></activity>
+        <activity android:name=".TLeaderboard" />
         <activity android:name=".quizResults" />
         <activity android:name=".UTLeaderboard" />
         <activity android:name=".QuestActivity" />
