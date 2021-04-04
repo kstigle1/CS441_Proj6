@@ -2,7 +2,6 @@ package com.stigler.cs441_proj6;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,20 +13,21 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class UTLeaderboard extends AppCompatActivity
+public class TLeaderboard extends AppCompatActivity
 {
-    TableLayout UTtable;
-    ArrayList<TableRow> UTrow;
+    TableLayout Ttable;
+    ArrayList<TableRow> Trow;
     Singleton single;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_u_t_leaderboard);
+        setContentView(R.layout.activity_t_leaderboard);
+
         single = Singleton.getInstance();
-        UTtable = (TableLayout) findViewById(R.id.UTLeaders);
-        UTrow = new ArrayList<>();
+        Ttable = (TableLayout) findViewById(R.id.UTLeaders);
+        Trow = new ArrayList<>();
 
         generateTable();
     }
@@ -40,36 +40,42 @@ public class UTLeaderboard extends AppCompatActivity
 
     public void clearTable(View view)
     {
-        while (UTrow.size() > 0)
+        while (Trow.size() > 0)
         {
-            TableRow gone = UTrow.remove(UTrow.size()-1);
-            UTtable.removeView(gone);
+            TableRow gone = Trow.remove(Trow.size()-1);
+            Ttable.removeView(gone);
         }
-        single.UTLBEntries.clear();
+        single.TLBEntries.clear();
         generateTable();
     }
 
     public void generateTable()
     {
-        Collections.sort(single.UTLBEntries);
-        for (int i=0; i<single.UTLBEntries.size(); i++)
+        Collections.sort(single.TLBEntries);
+        for (int i=0; i<single.TLBEntries.size(); i++)
         {
             TableRow tRow = new TableRow(this);
             TextView playerName = new TextView(this);
             TextView playerScore = new TextView(this);
+            TextView playerTime = new TextView(this);
 
-            playerName.setText(single.UTLBEntries.get(i).name);
+            playerName.setText(single.TLBEntries.get(i).name);
             playerName.setTextSize(15);
             playerName.setTextColor(Color.BLACK);
             tRow.addView(playerName, 0);
 
-            playerScore.setText(single.UTLBEntries.get(i).score + "%");
+            playerScore.setText(single.TLBEntries.get(i).score + "%");
             playerScore.setTextSize(15);
             playerScore.setTextColor(Color.BLACK);
             tRow.addView(playerScore, 1);
 
-            UTtable.addView(tRow);
-            UTrow.add(tRow);
+            playerTime.setText(single.TLBEntries.get(i).time + " seconds");
+            playerTime.setTextSize(15);
+            playerTime.setTextColor(Color.BLACK);
+            tRow.addView(playerTime, 2);
+
+            Ttable.addView(tRow);
+            Trow.add(tRow);
         }
     }
 }

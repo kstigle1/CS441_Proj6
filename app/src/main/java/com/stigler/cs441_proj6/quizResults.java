@@ -60,10 +60,17 @@ public class quizResults extends AppCompatActivity
         startActivity(actAction);
     }
 
-    public void returnLeader(View view)
+    public void returnUTLeader(View view)
     {
         addLeader();
         Intent actAction = new Intent(this, UTLeaderboard.class);
+        startActivity(actAction);
+    }
+
+    public void returnTLeader(View view)
+    {
+        addLeader();
+        Intent actAction = new Intent(this, TLeaderboard.class);
         startActivity(actAction);
     }
 
@@ -75,7 +82,14 @@ public class quizResults extends AppCompatActivity
             pName = "Anonymous Player";
         }
         LBEntry entry = new LBEntry(pName, Integer.toString(percentRes), timeRes);
-        single.LBEntries.add(entry);
+        if (single.timed)
+        {
+            single.TLBEntries.add(entry);
+        }
+        else
+        {
+            single.UTLBEntries.add(entry);
+        }
         whatName.setText("");
     }
 }

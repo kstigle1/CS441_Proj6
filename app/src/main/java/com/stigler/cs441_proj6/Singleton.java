@@ -9,7 +9,8 @@ public class Singleton
     private static Singleton single = null;
     ArrayList<Question> questions = new ArrayList<>();
     double totalCorrect = 0.0; //double instead of int so percent calculation works in results
-    ArrayList<LBEntry> LBEntries = new ArrayList<>();
+    ArrayList<LBEntry> UTLBEntries = new ArrayList<>();
+    ArrayList<LBEntry> TLBEntries = new ArrayList<>();
 
     boolean timed = false;
     long startTime, endTime;
