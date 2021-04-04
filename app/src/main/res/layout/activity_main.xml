@@ -101,4 +101,17 @@
         android:textColor="@color/black"
         />
 
+    <ImageView
+        android:id="@+id/startLights"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/startlights"
+        android:layout_marginTop="350dp"
+        android:alpha="1.0"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
