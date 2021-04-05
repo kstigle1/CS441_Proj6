@@ -33,7 +33,7 @@
         android:layout_marginRight="0dp"
         android:onClick="beginTGame"
         android:text="@string/startTime"
-        android:backgroundTint="@color/yellow"
+        android:backgroundTint="@color/red"
         android:textColor="@color/black"
         />
 
@@ -49,7 +49,7 @@
         android:layout_marginRight="0dp"
         android:onClick="beginUTGame"
         android:text="@string/startUTime"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/red"
         android:textColor="@color/black"
         />
 
@@ -65,7 +65,7 @@
         android:layout_marginRight="0dp"
         android:onClick="seeTLB"
         android:text="@string/seeTimeLB"
-        android:backgroundTint="@color/yellow"
+        android:backgroundTint="@color/red"
         android:textColor="@color/black"
         />
 
@@ -81,7 +81,7 @@
         android:layout_marginRight="0dp"
         android:onClick="seeUTLB"
         android:text="@string/seeUTimeLB"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/red"
         android:textColor="@color/black"
         />
 
@@ -97,7 +97,7 @@
         android:layout_marginRight="0dp"
         android:onClick="seeInsts"
         android:text="@string/how2play"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/red"
         android:textColor="@color/black"
         />
 

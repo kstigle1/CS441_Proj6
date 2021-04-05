@@ -26,7 +26,7 @@ public class QuestActivity extends AppCompatActivity
     Question curr;
 
     ImageView activeImage;
-    ImageView podium, monza, paulRicard, ukFlag, softtire, giohelmet, suzuka, worldmap, cota;
+    ImageView podium, monza, paulRicard, ukFlag, softtire, giohelmet, suzuka, worldmap, cota, pool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -51,6 +51,7 @@ public class QuestActivity extends AppCompatActivity
         suzuka = (ImageView) findViewById(R.id.suzuka);
         worldmap = (ImageView) findViewById(R.id.worldmap);
         cota = (ImageView) findViewById(R.id.cota);
+        pool = (ImageView) findViewById(R.id.pool);
 
         activeImage = podium;
 
@@ -92,6 +93,8 @@ public class QuestActivity extends AppCompatActivity
             case "worldmap": worldmap.setAlpha((float) 1.0); activeImage = worldmap;
             break;
             case "cota": cota.setAlpha((float) 1.0); activeImage = cota;
+            break;
+            case "pool": pool.setAlpha((float) 1.0); activeImage = pool;
             break;
         }
 
