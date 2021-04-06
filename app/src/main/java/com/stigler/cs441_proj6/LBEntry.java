@@ -21,7 +21,14 @@ public class LBEntry implements Comparable<LBEntry>
         }
         else if (single.timed && !time.equals(otherEntry.time))
         {
-            return (Integer.parseInt(time) - Integer.parseInt(otherEntry.time));
+            if (Double.parseDouble(time) - Double.parseDouble(otherEntry.time) > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return -1;
+            }
         }
         else
         {

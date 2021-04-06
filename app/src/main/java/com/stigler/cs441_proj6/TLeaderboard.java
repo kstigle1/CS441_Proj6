@@ -26,7 +26,7 @@ public class TLeaderboard extends AppCompatActivity
         setContentView(R.layout.activity_t_leaderboard);
 
         single = Singleton.getInstance();
-        Ttable = (TableLayout) findViewById(R.id.UTLeaders);
+        Ttable = (TableLayout) findViewById(R.id.TLeaders);
         Trow = new ArrayList<>();
 
         generateTable();

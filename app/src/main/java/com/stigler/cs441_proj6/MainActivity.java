@@ -70,15 +70,15 @@ public class MainActivity extends AppCompatActivity
         Question notCountry = new Question("Which country has never hosted a Grand Prix?", "worldmap", "Hungary", "South Africa", "Italy", "New Zealand", "New Zealand");
         Question notTrack = new Question("Which US racetrack has never hosted a Grand Prix?", "cota", "Indianapolis Motor Speedway", "Circuit of the Americas", "Watkins Glen International", "Laguna Seca Raceway", "Laguna Seca Raceway");
         Question jewel = new Question("Which race is considered \"The Jewel in F1's Crown?\"", "pool", "British Grand Prix", "Abu Dhabi Grand Prix", "Monaco Grand Prix", "Italian Grand Prix", "Monaco Grand Prix");
-        single.questions.add(raceWinner);
-        single.questions.add(ferrariMonza);
+        //single.questions.add(raceWinner);
+        //single.questions.add(ferrariMonza);
         single.questions.add(whichTrack);
-        single.questions.add(notUK);
-        single.questions.add(numTires);
-        single.questions.add(whichHelmet);
+        //single.questions.add(notUK);
+        //single.questions.add(numTires);
+        //single.questions.add(whichHelmet);
         single.questions.add(figure8);
-        single.questions.add(notCountry);
-        single.questions.add(notTrack);
-        single.questions.add(jewel);
+        //single.questions.add(notCountry);
+        //single.questions.add(notTrack);
+        //single.questions.add(jewel);
     }
 }
