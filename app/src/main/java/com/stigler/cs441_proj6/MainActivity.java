@@ -2,10 +2,16 @@ package com.stigler.cs441_proj6;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -19,6 +25,32 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         single = Singleton.getInstance();
+        if (single.startUp)
+        {
+            fillUTLB(getApplicationContext());
+            single.startUp = false;
+        }
+    }
+
+    public void fillUTLB(Context context)
+    {
+        try
+        {
+            FileInputStream fileInputStream = context.openFileInput("utFile.txt");
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, Charset.forName("UTF-8"));
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+            String line = reader.readLine();
+            while (line != null)
+            {
+                LBEntry temp = new LBEntry(line, reader.readLine(), reader.readLine());
+                single.UTLBEntries.add(temp);
+                line = reader.readLine();
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println("Something done messed up for utFile");
+        }
     }
 
     public void beginTGame(View view)
@@ -70,15 +102,15 @@ public class MainActivity extends AppCompatActivity
         Question notCountry = new Question("Which country has never hosted a Grand Prix?", "worldmap", "Hungary", "South Africa", "Italy", "New Zealand", "New Zealand");
         Question notTrack = new Question("Which US racetrack has never hosted a Grand Prix?", "cota", "Indianapolis Motor Speedway", "Circuit of the Americas", "Watkins Glen International", "Laguna Seca Raceway", "Laguna Seca Raceway");
         Question jewel = new Question("Which race is considered \"The Jewel in F1's Crown?\"", "pool", "British Grand Prix", "Abu Dhabi Grand Prix", "Monaco Grand Prix", "Italian Grand Prix", "Monaco Grand Prix");
-        //single.questions.add(raceWinner);
-        //single.questions.add(ferrariMonza);
-        single.questions.add(whichTrack);
-        //single.questions.add(notUK);
-        //single.questions.add(numTires);
-        //single.questions.add(whichHelmet);
+        single.questions.add(raceWinner);
+        single.questions.add(ferrariMonza);
+        /*single.questions.add(whichTrack);
+        single.questions.add(notUK);
+        single.questions.add(numTires);
+        single.questions.add(whichHelmet);
         single.questions.add(figure8);
-        //single.questions.add(notCountry);
-        //single.questions.add(notTrack);
-        //single.questions.add(jewel);
+        single.questions.add(notCountry);
+        single.questions.add(notTrack);
+        single.questions.add(jewel);*/
     }
 }

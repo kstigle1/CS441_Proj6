@@ -11,6 +11,11 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -30,7 +35,32 @@ public class UTLeaderboard extends AppCompatActivity
         UTtable = (TableLayout) findViewById(R.id.UTLeaders);
         UTrow = new ArrayList<>();
 
+
+
+        updateUTFile(getApplicationContext());
         generateTable();
+    }
+
+    public void updateUTFile (Context context)
+    {
+        String newLine = "\n";
+        try
+        {
+            FileOutputStream fileOutputStream = context.openFileOutput("utFile.txt", Context.MODE_PRIVATE);
+            for (int i=0; i<single.UTLBEntries.size(); i++)
+            {
+                String entryName = single.UTLBEntries.get(i).name + newLine;
+                String entryScore = single.UTLBEntries.get(i).score + newLine;
+                String entryTime = single.UTLBEntries.get(i).time + newLine;
+                fileOutputStream.write(entryName.getBytes(Charset.forName("UTF-8")));
+                fileOutputStream.write(entryScore.getBytes(Charset.forName("UTF-8")));
+                fileOutputStream.write(entryTime.getBytes(Charset.forName("UTF-8")));
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println("Something done messed up for utFile");
+        }
     }
 
     public void returnToMain(View view)
@@ -39,7 +69,22 @@ public class UTLeaderboard extends AppCompatActivity
         startActivity(actAction);
     }
 
-    public void clearTable(View view)
+    public void clearFile(Context context)
+    {
+        String empty = null;
+        try
+        {
+            FileOutputStream fileOutputStream = context.openFileOutput("utFile.txt", Context.MODE_PRIVATE);
+            fileOutputStream.write(empty.getBytes(Charset.forName("UTF-8")));
+
+        }
+        catch (Exception e)
+        {
+            System.out.println("Something done messed up for utFile");
+        }
+    }
+
+    public void clearTable()
     {
         while (UTrow.size() > 0)
         {
@@ -47,11 +92,40 @@ public class UTLeaderboard extends AppCompatActivity
             UTtable.removeView(gone);
         }
         single.UTLBEntries.clear();
+    }
+
+    public void clearUTLeader(View view)
+    {
+        clearFile(getApplicationContext());
+        clearTable();
         generateTable();
+    }
+
+    public void getFromUTFile(Context context)
+    {
+        clearTable();
+        try
+        {
+            FileInputStream fileInputStream = context.openFileInput("utFile.txt");
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, Charset.forName("UTF-8"));
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+            String line = reader.readLine();
+            while (line != null)
+            {
+                LBEntry temp = new LBEntry(line, reader.readLine(), reader.readLine());
+                single.UTLBEntries.add(temp);
+                line = reader.readLine();
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println("Something done messed up for utFile");
+        }
     }
 
     public void generateTable()
     {
+        getFromUTFile(getApplicationContext());
         Collections.sort(single.UTLBEntries);
         for (int i=0; i<single.UTLBEntries.size(); i++)
         {

@@ -15,6 +15,8 @@ public class Singleton
     boolean timed = false;
     long startTime, endTime;
 
+    boolean startUp = true;
+
     private Singleton()
     {
         //
