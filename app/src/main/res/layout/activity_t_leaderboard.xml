@@ -97,7 +97,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="300dp"
         android:layout_marginRight="0dp"
-        android:onClick="clearTable"
+        android:onClick="clearTLeader"
         android:text="@string/clear"
         android:backgroundTint="@color/blue"
         android:textColor="@color/white"

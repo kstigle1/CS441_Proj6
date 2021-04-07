@@ -27,8 +27,30 @@ public class MainActivity extends AppCompatActivity
         single = Singleton.getInstance();
         if (single.startUp)
         {
+            fillTLB(getApplicationContext());
             fillUTLB(getApplicationContext());
             single.startUp = false;
+        }
+    }
+
+    public void fillTLB(Context context)
+    {
+        try
+        {
+            FileInputStream fileInputStream = context.openFileInput("tFile.txt");
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, Charset.forName("UTF-8"));
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+            String line = reader.readLine();
+            while (line != null)
+            {
+                LBEntry temp = new LBEntry(line, reader.readLine(), reader.readLine());
+                single.TLBEntries.add(temp);
+                line = reader.readLine();
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println("Something done messed up for tFile");
         }
     }
 
